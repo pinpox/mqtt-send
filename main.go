@@ -8,6 +8,7 @@ import (
 	"os"
 
 	mqtt "github.com/eclipse/paho.mqtt.golang"
+	"github.com/kouhin/envflag"
 )
 
 var messagePubHandler mqtt.MessageHandler = func(client mqtt.Client, msg mqtt.Message) {
@@ -39,14 +40,9 @@ func init() {
 	portFlag := flag.Int("port", 1883, "Broker port")
 	topicFlag := flag.String("topic", "awtrix/custom/mqtt-send", "Topic to send to")
 
-	flag.Parse()
+	envflag.Parse()
 
-	if envPass := os.Getenv("MQTT_PASSWORD"); envPass != "" {
-		password = envPass
-	} else {
-		password = *passwordFlag
-	}
-
+	password = *passwordFlag
 	broker = *brokerFlag
 	port = *portFlag
 	clientID = *clientIDFlag
