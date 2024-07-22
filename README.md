@@ -6,22 +6,22 @@ stdin, connection parameters can be provided via flags.
 ## Usage
 
 ```
-Usage of mqtt-send:
+Usage of ./mqtt-send:
   -broker string
-    	Broker address (default "birne")
+    	[BROKER] Broker address (default "birne")
   -cliend-id string
-    	Client ID to send as (default "mqtt-send")
+    	[CLIEND_ID] Client ID to send as (default "mqtt-send")
   -password string
-    	Password for the broker connection (default "mosquitto")
+    	[PASSWORD] Password for the broker connection (default "mosquitto")
   -port int
-    	Broker port (default 1883)
+    	[PORT] Broker port (default 1883)
   -topic string
-    	Topic to send to (default "awtrix/custom/mqtt-send")
+    	[TOPIC] Topic to send to (default "awtrix/custom/mqtt-send")
   -user string
-    	User for the broker connection (default "mosquitto")
+    	[USER] User for the broker connection (default "pinpox")
 ```
 
-The password can also be provided as environment variable `MQTT_PASSWORD`
+Settings can be specified by flags or the shown `[ENVIRONMENT_VAR]`.
 
 ### Example
 
